@@ -30,16 +30,16 @@ public class Buttons {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         jsExecutor.executeScript("document.getElementById('button2').click();");
 
-        // Wait for the modal to appear
+
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement modal = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("myModalJSClick")));
 
-        // Use JavaScript to retrieve the text inside the modal
+
         String modalText = (String) jsExecutor.executeScript("return document.querySelector('#myModalJSClick p').textContent;");
 
         System.out.println("Modal Text: " + modalText);
 
-        // Validate the modal text
+        
         boolean equals = modalText.equals("We can use JavaScript code if all else fails! Remember always try to use the WebDriver Library method(s) first such as WebElement.click(). (The Selenium development team have spent allot of time developing WebDriver functions etc).");
         System.out.println(equals);
     }
