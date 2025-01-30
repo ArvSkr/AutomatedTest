@@ -31,12 +31,16 @@ public class formtest {
         driver.findElement(By.id("uploadPicture")).sendKeys("C:\\Users\\D2PT\\Desktop\\text.txt");
         driver.findElement(By.id("currentAddress")).sendKeys("uuyagyusagyusdagyusagsyuagdsyuagdyu");
 
-        // Select state = new Select(driver.findElement(By.cssSelector(".css-yk16xz-control")));
-        // state.selectByVisibleText("Uttar Pradesh");
-//
-//        WebElement Element = driver.findElement(By.cssSelector(".css-2b097c-container"));
-//        Select city = new Select(Element);
-//        city.selectByVisibleText("Agra");
+
+        driver.findElement(By.id("state")).click();
+        driver.findElement(By.xpath("//div[text()='Haryana']")).click();
+
+
+        driver.findElement(By.id("city")).click();
+        driver.findElement(By.xpath("//div[text()='Karnal']")).click();
+
+        driver.findElement(By.id("submit")).click();
+
         driver.quit();
 
     }
