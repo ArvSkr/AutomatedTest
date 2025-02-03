@@ -36,6 +36,8 @@ public class SignUpPage extends BasePage {
     private WebElement submit;
     @FindBy(css = "a[title='View my customer account']")
     private WebElement accountName;
+    @FindBy(xpath = "//section[@id='main']//h1[1]")
+    private WebElement title;
 
 
     public SignUpPage(WebDriver driver) {
@@ -89,7 +91,12 @@ public class SignUpPage extends BasePage {
     public String getEmail() {
         return email.getAttribute("value");
     }
-
+    public String getPassword(){
+        return Password.getAttribute("value");
+    }
+    public String getTitle(){
+        return title.getAttribute("value");
+    }
 
 }
 

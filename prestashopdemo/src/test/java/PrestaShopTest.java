@@ -2,6 +2,7 @@
 import Inputs.LoginPage;
 import Inputs.MainPage;
 import Inputs.SignUpPage;
+import com.google.common.base.MoreObjects;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
@@ -54,6 +55,10 @@ public class PrestaShopTest extends BaseTest {
         assertEquals(expectedname, actualFirstName, "Tester");
         assertEquals(expectedname, actualLastName, "Tester");
         assertEquals(expectedEmail, actualEmail, "Tester2@Tester.com");
+
+        String titleactual = signUpPage.getTitle();
+        assertEquals("Create an account", titleactual, "");
+        
 
 
     }
