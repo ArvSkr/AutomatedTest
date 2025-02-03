@@ -38,6 +38,8 @@ public class SignUpPage extends BasePage {
     private WebElement accountName;
     @FindBy(xpath = "//section[@id='main']//h1[1]")
     private WebElement title;
+    @FindBy(xpath = "/html//form[@id='customer-form']//ul/li[@class='alert alert-danger']")
+    private WebElement error;
 
 
     public SignUpPage(WebDriver driver) {
@@ -97,7 +99,9 @@ public class SignUpPage extends BasePage {
     public String getTitle(){
         return title.getText();
     }
-
+    public String getError(){
+        return error.getText();
+    }
 }
 
 

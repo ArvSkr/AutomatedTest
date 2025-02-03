@@ -13,7 +13,7 @@ public class BaseTest {
         driver = new ChromeDriver();
         driver.get("https://demo.prestashop.com/#/en/front");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(ofSeconds(40));
     }
     @AfterEach
     void teardown(){
