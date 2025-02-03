@@ -16,7 +16,7 @@ public class InvalidEmailTest extends  BaseTest{
         signUpPage.birthdayInput("2005-12-05");
         signUpPage.clickOptions();
         String errorMessage = signUpPage.getError();
-        assertEquals("Invalid format.", errorMessage, "");
+        assertEquals("Invalid format.", errorMessage);
 
     }
 }

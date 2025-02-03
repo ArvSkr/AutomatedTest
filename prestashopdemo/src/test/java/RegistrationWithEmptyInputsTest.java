@@ -30,12 +30,12 @@ public class RegistrationWithEmptyInputsTest extends BaseTest {
         String expectedEmail = "";
         String expectedPassword="";
 
-        assertEquals(expectedName, actualFirstName, "");
-        assertEquals(expectedName, actualLastName, "");
-        assertEquals(expectedEmail, actualEmail, "");
-        assertEquals(expectedPassword, actualPassword, "");
+        assertEquals(expectedName, actualFirstName);
+        assertEquals(expectedName, actualLastName);
+        assertEquals(expectedEmail, actualEmail);
+        assertEquals(expectedPassword, actualPassword);
         String titleactual = signUpPage.getTitle();
-        assertEquals("Create an account", titleactual, "");
+        assertEquals("Create an account", titleactual);
 
 
     }
