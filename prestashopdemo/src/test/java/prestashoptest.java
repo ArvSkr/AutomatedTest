@@ -46,6 +46,7 @@ public class prestashoptest {
         driver.findElement(By.id("field-password")).sendKeys("Tester21*tester");
         driver.findElement(By.id("field-birthday")).sendKeys("2005-08-14");
         driver.findElement(By.xpath("/html//form[@id='customer-form']/div/div[7]//input[@name='optin']")).click();
+        
 
 
 
