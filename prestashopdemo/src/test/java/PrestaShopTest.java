@@ -23,7 +23,7 @@ public class PrestaShopTest extends BaseTest {
         signUpPage.signUpPageNavigation();
         signUpPage.setMrOrMiss();
         String fullName = signUpPage.nameInputs("Tester", "Tester");
-        signUpPage.emailInput("Tester2@tester.com");
+        signUpPage.emailInput("Tester3@tester.com");
         signUpPage.passwordInput("Tester*12345");
         signUpPage.birthdayInput("2005-05-04");
         signUpPage.clickOptions();
