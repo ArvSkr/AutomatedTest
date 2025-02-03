@@ -56,9 +56,8 @@ public class PrestaShopTest extends BaseTest {
         assertEquals(expectedname, actualLastName, "Tester");
         assertEquals(expectedEmail, actualEmail, "Tester2@Tester.com");
 
-        String titleactual = signUpPage.getTitle();
-        assertEquals("Create an account", titleactual, "");
-        
+
+
 
 
     }

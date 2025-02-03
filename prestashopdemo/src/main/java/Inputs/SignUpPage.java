@@ -95,7 +95,7 @@ public class SignUpPage extends BasePage {
         return Password.getAttribute("value");
     }
     public String getTitle(){
-        return title.getAttribute("value");
+        return title.getText();
     }
 
 }
