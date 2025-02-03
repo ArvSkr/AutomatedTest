@@ -36,13 +36,19 @@ public class prestashoptest {
 
         WebElement signinwait = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='_desktop_user_info']//a")));
         signinwait.click();
-        WebElement createAccountLink = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(@className, 'no-account')]")));
+        WebElement createAccountLink = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='content']/div[@class='no-account']")));
         createAccountLink.click();
 
+        driver.findElement(By.xpath("/html//form[@id='customer-form']/div/div[1]/div[1]/label[1]")).click();
+        driver.findElement(By.id("field-firstname")).sendKeys("Tester");
+        driver.findElement(By.id("field-lastname")).sendKeys("Tester");
+        driver.findElement(By.id("field-email")).sendKeys("Tester@gmail.com");
+        driver.findElement(By.id("field-password")).sendKeys("Tester21*tester");
+        driver.findElement(By.id("field-birthday")).sendKeys("2005-08-14");
+        driver.findElement(By.xpath("/html//form[@id='customer-form']/div/div[7]//input[@name='optin']")).click();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("customer-form")));
 
-        signinwait.click();
-        driver.quit();
+
+
     }
 }
