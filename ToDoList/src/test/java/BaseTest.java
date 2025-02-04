@@ -13,11 +13,11 @@ public class BaseTest {
         driver = new ChromeDriver();
         driver.get("https://todomvc.com/examples/react/dist/");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(ofSeconds(40));
+        driver.manage().timeouts().implicitlyWait(ofSeconds(10));
     }
 
     @AfterEach
     void teardown() {
-        
+        driver.quit();
     }
 }
