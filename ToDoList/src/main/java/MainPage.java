@@ -17,7 +17,7 @@ public class MainPage extends BasePage {
     @FindBy(css = ".todo-list label")
     private List<WebElement> tasks;
 
-    @FindBy(css = ".toggle")
+    @FindBy(xpath = "/html//section[@id='root']//ul[@class='todo-list']//input[@class='toggle']")
     private List<WebElement> checkboxes;
 
     @FindBy(css = ".destroy")
@@ -56,7 +56,7 @@ public class MainPage extends BasePage {
     public boolean isTaskCompleted(String taskName) {
         for (WebElement task : tasks) {
             if (task.getText().equals(taskName)) {
-                return task.getAttribute("class").contains("completed");
+                return task.getAttribute("class").contains(taskName);
             }
         }
         return false;

@@ -21,11 +21,11 @@ public class Todotest extends BaseTest {
     @Test
     void deleteTask() {
         MainPage mainPage = new MainPage(driver);
-        String taskName = "Grocery Shopping";
-        mainPage.addTask(taskName);
-        mainPage.deleteTask(taskName);
 
-        Assertions.assertTrue(mainPage.isTaskDeleted(taskName), "Task was not deleted successfully");
+        mainPage.addTask("Grocery Shopping");
+        mainPage.deleteTask("Grocery Shopping");
+
+        Assertions.assertTrue(mainPage.isTaskDeleted("Grocery Shopping"), "Task was not deleted successfully");
     }
     @Test
     void editTask() {
