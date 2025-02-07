@@ -37,14 +37,14 @@ public class FilterTest {
 
         for (WebElement product : productNames) {
             assertTrue(product.getText().toLowerCase().contains(searchText),
-                    "Produktas neturi '" + searchText + "': " + product.getText());
+                    "Product does not have'" + searchText + "': " + product.getText());
         }
     }
 
     @Test
     void testSortingFunctionality() {
         WebElement sortHeader = driver.findElement(By.xpath("//tr/th[1]"));
-        sortHeader.click(); // Click to sort in ascending order
+        sortHeader.click();
 
         List<WebElement> productNames = driver.findElements(By.xpath("//tr/td[1]"));
         List<String> obtainedList = new ArrayList<>();
@@ -55,7 +55,7 @@ public class FilterTest {
         List<String> sortedList = new ArrayList<>(obtainedList);
         Collections.sort(sortedList);
 
-        Assertions.assertEquals(sortedList, obtainedList, "Produktai nėra surūšiuoti abėcėlės tvarka!");
+        Assertions.assertEquals(sortedList, obtainedList, "Products are not sorted by alphabetically");
     }
 
     @AfterAll
