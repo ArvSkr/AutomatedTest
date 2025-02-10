@@ -7,7 +7,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -16,20 +19,22 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class FilterTest {
     static WebDriver driver;
+    static WebDriverWait wait;
 
     @BeforeAll
     static void setUp() {
-        WebDriverManager.chromedriver().setup();
+
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://rahulshettyacademy.com/seleniumPractise/#/offers");
-
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
     @Test
     void testSearchFunctionality() {
+
         String searchText = "at";
-        WebElement searchBox = driver.findElement(By.id("search-field"));
+        WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("search-field")));
         searchBox.clear();
         searchBox.sendKeys(searchText);
 
@@ -58,10 +63,11 @@ public class FilterTest {
         Assertions.assertEquals(sortedList, obtainedList, "Products are not sorted by alphabetically");
     }
 
+
     @AfterAll
     static void tearDown() {
         if (driver != null) {
-            driver.quit();
+            
         }
     }
 }
