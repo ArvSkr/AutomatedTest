@@ -46,20 +46,17 @@ public class OpenCartTest extends BaseTest {
         search.inputSearchBar("touch");
         search.isProductDisplayed("touch");
 
-        List<WebElement> products = driver.findElements(By.cssSelector(".product-thumb"));
+        List<WebElement> products = driver.findElements(By.cssSelector("h4"));
 
         for(WebElement product : products){
-            String productName = product.findElement(By.cssSelector(".product-title")).getText();
-
+            String productName = product.getText();
             productPage.addToCart();
             productPage.isAddedToCart();
-
-            
             System.out.println(productName + " is added to cart");
         }
         cartPage.clickOnCart();
         cartPage.estimateShippingAndTaxes();
-        cartPage.checkIfTotalisSame();
+        cartPage.checkIfTotalIsSame();
     }
 
 
